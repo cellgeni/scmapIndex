@@ -22,6 +22,8 @@ isSpike(sce, "ERCC") <- grepl("^ERCC-", rownames(sce))
 # scmap requires cell_type1 column for the reference
 colnames(colData(sce))[grepl("ClusterID", colnames(colData(sce)))] <- "cell_type1"
 
+# run scmap
+sce <- selectFeatures(sce)
 sce <- indexCell(sce)
 saveRDS(
     metadata(sce)$scmap_cell_index,
