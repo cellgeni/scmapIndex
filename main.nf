@@ -8,6 +8,8 @@ Channel
     .into { sce_files_cluster; scmap_files_cell }
 
 process scmap_cluster {
+    tag "${f}"
+
     publishDir "./scmap-cluster", mode: 'copy'
 
     input:
@@ -23,6 +25,8 @@ process scmap_cluster {
 }
 
 process scmap_cell {
+    tag "${f}"
+    
     publishDir "./scmap-cell", mode: 'copy'
 
     input:

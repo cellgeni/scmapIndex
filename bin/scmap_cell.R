@@ -6,6 +6,7 @@ library(SingleCellExperiment)
 args <- commandArgs(trailingOnly = TRUE)
 
 sce <- readRDS(args[1])
+rowData(d)$feature_symbol <- rownames(counts(d))
 
 sce <- selectFeatures(sce, suppress_plot = FALSE)
 
