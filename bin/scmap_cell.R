@@ -27,5 +27,5 @@ sce <- selectFeatures(sce)
 sce <- indexCell(sce)
 saveRDS(
     metadata(sce)$scmap_cell_index,
-    file = paste0(strsplit(args[1], "\\.")[[1]][1], ".rds")
+    file = paste0(strsplit(args[1], "\\.")[[1]][1], "_ind.rds")
 )

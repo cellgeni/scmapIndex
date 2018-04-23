@@ -28,5 +28,5 @@ sce <- indexCluster(sce)
 write.csv(
     metadata(sce)$scmap_cluster_index, 
     quote = F,
-    file = paste0(strsplit(args[1], "\\.")[[1]][1], ".csv")
+    file = paste0(strsplit(args[1], "\\.")[[1]][1], "_ind.csv")
 )
