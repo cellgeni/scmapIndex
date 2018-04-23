@@ -3,7 +3,7 @@
 params.sce_folder = "sce-objects"
 
 Channel
-    .fromPath( params.sce_folder )
+    .fromPath( params.sce_folder + '/*.rds' )
     .ifEmpty { exit 1, "No input files found!" }
     .into { sce_files_cluster; scmap_files_cell }
 
