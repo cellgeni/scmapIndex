@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
 
-params.sce_folder = "."
+params.sce_folder = "sce-objects"
 
 Channel
     .fromPath( params.sce_folder )
