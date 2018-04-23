@@ -5,13 +5,13 @@ params.sce_folder = "sce-objects"
 Channel
     .fromPath( params.sce_folder )
     .ifEmpty { exit 1, "No input files found!" }
-    .into { sce_files }
+    .into { sce_files_cluster; scmap_files_cell }
 
 process scmap_cluster {
     publishDir "./scmap-cluster", mode: 'copy'
 
     input:
-    file f from sce_files
+    file f from sce_files_cluster
 
     output:
     file "*.csv"
@@ -26,7 +26,7 @@ process scmap_cell {
     publishDir "./scmap-cell", mode: 'copy'
 
     input:
-    file f from sce_files
+    file f from scmap_files_cell
 
     output:
     file "*.rds"
